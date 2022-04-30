@@ -15,7 +15,7 @@ public class DetailActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private ImageView image;
-    private TextView nama,lokasi,deskripsi;
+    private TextView nama,lokasi,deskripsi,bintang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,13 +26,14 @@ public class DetailActivity extends AppCompatActivity {
 
 
         toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Detail Wisata");
+        toolbar.setTitle("Detail");
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
 
         image = findViewById(R.id.image);
         nama = findViewById(R.id.nama);
         lokasi = findViewById(R.id.lokasi);
+        bintang = findViewById(R.id.bintang);
         deskripsi = findViewById(R.id.deskripsi);
 
         Glide.with(getApplicationContext())
@@ -42,6 +43,7 @@ public class DetailActivity extends AppCompatActivity {
 
         nama.setText(intent.getStringExtra("nama"));
         lokasi.setText(intent.getStringExtra("lokasi"));
+        bintang.setText(intent.getStringExtra("bintang"));
         deskripsi.setText(intent.getStringExtra("deskripsi"));
     }
 }

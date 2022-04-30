@@ -54,6 +54,17 @@
                 app:layout_constraintTop_toBottomOf="@+id/nama" />
 
             <TextView
+                android:id="@+id/bintang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/ic_baseline_star_half_24"
+                android:text="Bintang"
+                android:textColor="#000000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lokasi" />
+
+            <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -63,7 +74,7 @@
                 android:textColor="#000000"
                 android:textSize="17sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lokasi" />
+                app:layout_constraintTop_toBottomOf="@+id/bintang" />
 
             <TextView
                 android:id="@+id/deskripsi"

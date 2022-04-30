@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private String url = "https://kangoding.com/test.php";
     private ArrayList<ModelList> arrayList = new ArrayList<ModelList>();
     private ArrayList<ModelList> arrayRekomendasi = new ArrayList<ModelList>();
-    private LinearLayout tempatwisata;
+    private LinearLayout tempatwisata,kuliner,about;
 
     private ProgressDialog dialog;
     private RecyclerView listview;
@@ -73,6 +73,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        kuliner = findViewById(R.id.kuliner);
+        kuliner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent move = new Intent(MainActivity.this, KulinerActivity.class);
+                startActivity(move); //ini buat pindah activity
+            }
+        });
+
+        about = findViewById(R.id.about);
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent move = new Intent(MainActivity.this, AboutActivity.class);
+                startActivity(move); //ini buat pindah activity
+            }
+        });
+
         getList();
 
     }
@@ -97,9 +115,10 @@ public class MainActivity extends AppCompatActivity {
                                 String image = obj.getString("image");
                                 String lokasi = obj.getString("lokasi");
                                 String name = obj.getString("name");
+                                String bintang = obj.getString("bintang");
                                 String deskripsi = obj.getString("deskripsi");
 
-                                ModelList item = new ModelList(image,name,lokasi,deskripsi);
+                                ModelList item = new ModelList(image,name,lokasi,bintang,deskripsi);
                                 arrayList.add(item);
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -135,9 +154,10 @@ public class MainActivity extends AppCompatActivity {
                                 String image = obj.getString("image");
                                 String lokasi = obj.getString("lokasi");
                                 String name = obj.getString("name");
+                                String bintang = obj.getString("bintang");
                                 String deskripsi = obj.getString("deskripsi");
 
-                                ModelList item = new ModelList(image,name,lokasi,deskripsi);
+                                ModelList item = new ModelList(image,name,lokasi,bintang,deskripsi);
                                 arrayRekomendasi.add(item);
                             } catch (JSONException e) {
                                 e.printStackTrace();

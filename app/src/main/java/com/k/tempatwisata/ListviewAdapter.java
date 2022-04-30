@@ -16,6 +16,8 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+import javax.xml.namespace.QName;
+
 public class ListviewAdapter extends RecyclerView.Adapter<ListviewAdapter.MyViewHolder> implements View.OnClickListener{
 
     private ArrayList<ModelList> array;
@@ -76,6 +78,7 @@ public class ListviewAdapter extends RecyclerView.Adapter<ListviewAdapter.MyView
                 move.putExtra("image", item.getImage());
                 move.putExtra("nama", item.getName());
                 move.putExtra("lokasi", item.getLokasi());
+                move.putExtra("bintang", item.getBintang());
                 move.putExtra("deskripsi", item.getDeskripsi());
                 context.startActivity(move);
             }

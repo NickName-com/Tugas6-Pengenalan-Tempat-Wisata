@@ -1,7 +1,7 @@
 package com.k.tempatwisata;
 
 public class ModelList {
-    public  String image,name,lokasi,deskripsi;
+    public  String image,name,lokasi,bintang,deskripsi;
 
     public String getImage() {
         return image;
@@ -27,6 +27,14 @@ public class ModelList {
         this.lokasi = lokasi;
     }
 
+    public String getBintang() {
+        return bintang;
+    }
+
+    public void setBintang(String bintang) {
+        this.bintang = bintang;
+    }
+
     public String getDeskripsi() {
         return deskripsi;
     }
@@ -35,10 +43,11 @@ public class ModelList {
         this.deskripsi = deskripsi;
     }
 
-    public ModelList(String image, String name, String lokasi, String deskripsi){
+    public ModelList(String image, String name, String lokasi, String bintang, String deskripsi){
         this.image = image;
         this.name = name;
         this.lokasi = lokasi;
+        this.bintang = bintang;
         this.deskripsi = deskripsi;
     }
 }

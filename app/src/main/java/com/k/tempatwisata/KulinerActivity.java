@@ -22,22 +22,21 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class WisataActivity extends AppCompatActivity {
+public class KulinerActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private ListviewAdapter adapter;
-    private ArrayList<ModelList> arrayList = new ArrayList<ModelList>();
     private RecyclerView recyclerView;
+    private ArrayList<ModelList> arrayList = new ArrayList<ModelList>();
+    private String url = "https://kangoding.com/kuliner.php";
     private ProgressDialog dialog;
-    private String url = "https://kangoding.com/test.php";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wisata);
+        setContentView(R.layout.activity_kuliner);
 
         toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Tempat Wisata");
+        toolbar.setTitle("List Kuliner");
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
 
@@ -50,7 +49,6 @@ public class WisataActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         getList();
-
     }
 
     public void getList(){
